@@ -21,25 +21,7 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => false,
-            'messageConfig' => [
-                'from' => ['info@forsk.ru' => 'Info'], // this is needed for sending emails
-                'charset' => 'UTF-8',
-            ],
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'forsk.ru',
-                'username' => 'info@forsk.ru',
-                'password' => '', // new generated API key by mandrill
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
-        ],
+        'mailer' => require(__DIR__ . '/mailer.php'),
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

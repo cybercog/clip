@@ -16,6 +16,8 @@ return [
 ];
 
 Setup mailer
+============================
+add file config/mailer.php:
 'mailer' => [
     'class' => 'yii\swiftmailer\Mailer',
     'useFileTransport' => false,
