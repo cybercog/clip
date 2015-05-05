@@ -36,6 +36,11 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Главная', 'url' => ['/site/index']],
+                    Yii::$app->user->isGuest ?
+                        ['label' => 'Вход', 'url' => ['/user/login']] :
+                        ['label' => 'Выход (' . Yii::$app->user->displayName . ')',
+                            'url' => ['/user/logout'],
+                            'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
             NavBar::end();
