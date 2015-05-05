@@ -1,5 +1,5 @@
-#ifndef CLIPTOR_H
-#define CLIPTOR_H
+#ifndef CLIP_H
+#define CLIP_H
 
 #include <QWidget>
 #include <QStringList>
@@ -9,23 +9,25 @@ class QSystemTrayIcon;
 class QMenu;
 
 namespace Ui {
-class Cliptor;
+    class Clip;
 }
 
-class Cliptor : public QWidget
+
+class Clip : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Cliptor(QWidget *parent = 0);
-    ~Cliptor();
+    explicit Clip(QWidget *parent = 0);
+    ~Clip();
 
 private slots:
     void clipboardChanged();
     void quitApplication();
+    void pasteToClipboard();
 
 private:
-    Ui::Cliptor *ui;
+    Ui::Clip *ui;
     QSystemTrayIcon *tray;
     QMenu   *trayMenu;
 
@@ -33,6 +35,7 @@ private:
 
     int clipboardActionListCount;
     int clipboardActionListPos;
+    bool pasting;
 };
 
-#endif // CLIPTOR_H
+#endif // CLIP_H

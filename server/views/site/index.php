@@ -1,49 +1,37 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+$this->title = 'FlyClip - открытый облачный буфер обмена | Open source cloud clipboard';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>FlyClip</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">Привет и добро пожаловать!</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p><a class="btn btn-lg btn-success" href="#">Скачать клиент</a></p>
+        <p>FlyClip - это бесплатный и <a target="_BLANK" href="https://github.com/kafeg/clip">свободный</a> облачный буфер
+        обмена для всех Ваших ПК!</p>
+        <p>Всего три простых шага позволят Вам получить общий буфер обмена для всех Ваших устройств на Windows и Linux!</p>
     </div>
 
     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Шаг 1. Регистрация</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                <p>Зарегитрируйтесь в проекте, подвтердите свой Email и зайдите в личный кабинет пользователя. Запомните свои токены!</p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Шаг 2. Клиент</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <p>Скачайте и запустите клиент для Вашей операционной системы Windows или Linux на всех своих устройствах. Клиент весит немного и не будет нагружать ОС.</p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Шаг 3. Авторизация клиента</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <p>Просто скопируйте нужный токен из личного кабинета в клиент и пользуйтесь общим буфером обмена на всех своих устройствах!</p>
             </div>
         </div>
 

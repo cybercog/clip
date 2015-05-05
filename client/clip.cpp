@@ -1,5 +1,5 @@
-#include "cliptor.h"
-#include "ui_cliptor.h"
+#include "clip.h"
+#include "ui_clip.h"
 #include <QClipboard>
 #include <QTimer>
 #include <QDebug>
@@ -7,14 +7,16 @@
 #include <QMenu>
 #include <QMimeData>
 
-Cliptor::Cliptor(QWidget *parent) :
+Clip::Clip(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Cliptor),
+    ui(new Ui::Clip),
     clipboardActionListCount(10),
-    clipboardActionListPos(0)
+    clipboardActionListPos(0),
+    pasting(false)
 {
     ui->setupUi(this);
     qApp->setQuitOnLastWindowClosed(false);
+    hide();
 
     //menu and actions
     trayMenu = new QMenu(this);
@@ -24,6 +26,8 @@ Cliptor::Cliptor(QWidget *parent) :
         action->setProperty("mimeData", "-");
         clipboardActionList.append(action);
         trayMenu->addAction(action);
+        connect(action, SIGNAL(triggered()),
+                    this, SLOT(pasteToClipboard()));
     }
     trayMenu->addSeparator();
 
@@ -44,8 +48,11 @@ Cliptor::Cliptor(QWidget *parent) :
                 this, SLOT(clipboardChanged()));
 }
 
-void Cliptor::clipboardChanged()
+void Clip::clipboardChanged()
 {
+    if (pasting) {
+        return;
+    }
     QString text = QApplication::clipboard()->text();
     QString truncated = text;
     truncated.truncate(12);
@@ -88,12 +95,22 @@ void Cliptor::clipboardChanged()
      //    }
 }
 
-void Cliptor::quitApplication()
+void Clip::quitApplication()
 {
     qApp->quit();
 }
 
-Cliptor::~Cliptor()
+void Clip::pasteToClipboard()
+{
+    pasting = true;
+    QAction *action = (QAction *)sender();
+
+    QApplication::clipboard()->setText(action->property("fullText").toString ());
+
+    pasting = false;
+}
+
+Clip::~Clip()
 {
     delete ui;
 }

@@ -1,11 +1,10 @@
-#include "cliptor.h"
+#include "clip.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Cliptor w;
-    w.show();
+    Clip w;
 
     return a.exec();
 }
